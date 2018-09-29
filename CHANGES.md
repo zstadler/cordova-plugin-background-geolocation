@@ -155,6 +155,11 @@ Since alpha.42:
 (PR: [#13](https://github.com/mauron85/background-geolocation-android/pull/13)
 by [@hoisel](https://github.com/hoisel/))
 
+Since alpha.43:
+- Android make sure mService exists when we call start or stop
+(PR: [#17](https://github.com/mauron85/background-geolocation-android/pull/17)
+by [@ivosabev](https://github.com/ivosabev/))
+
 ### [2.3.3] - 2017-11-17
 ### Added
 - Android allow override google play services version
