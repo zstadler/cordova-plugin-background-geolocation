@@ -160,6 +160,14 @@ Since alpha.43:
 (PR: [#17](https://github.com/mauron85/background-geolocation-android/pull/17)
 by [@ivosabev](https://github.com/ivosabev/))
 
+### [2.3.6] - 2018-09-11
+### Fixed
+- Android remove non public URL
+
+### [2.3.5] - 2018-03-29
+### Fixed
+- Android fix #384
+
 ### [2.3.3] - 2017-11-17
 ### Added
 - Android allow override google play services version
