@@ -44,6 +44,10 @@ More info: https://github.com/mauron85/react-native-background-geolocation/pull/
 - Allow stopping location updates on status "285 Updates Not Required" (by [@danielgindi](https://github.com/danielgindi/))
 More info: https://github.com/mauron85/react-native-background-geolocation/pull/271
 
+Since alpha.44:
+- Listen for 401 Unauthorized status codes received from http server (by [@FeNoMeNa](https://github.com/FeNoMeNa/))
+More info: https://github.com/mauron85/react-native-background-geolocation/pull/308/files
+
 #### Changed
 - start and stop methods doesn't accept callback (use event listeners instead)
 - for background syncing syncUrl option is required
