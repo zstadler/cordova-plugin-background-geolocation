@@ -573,7 +573,7 @@ public class BackgroundGeolocationPlugin extends CordovaPlugin implements Plugin
 
     @Override
     public void onHttpAuthorization() {
-        sendEvent(HTTP_AUTHORIZATION_EVENT, null);
+        sendEvent(HTTP_AUTHORIZATION_EVENT);
     }
 
     @Override
