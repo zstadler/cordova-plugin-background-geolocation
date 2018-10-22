@@ -439,6 +439,11 @@ static NSString * const TAG = @"CDVBackgroundGeolocation";
     [self sendEvent:@"abort_requested"];
 }
 
+- (void) onHttpAuthorization {
+    NSLog(@"%@ %@", TAG, @"http authorization requested by the server");
+    [self sendEvent:@"http_authorization"];
+}
+
 /**@
  * on UIApplicationDidFinishLaunchingNotification
  */

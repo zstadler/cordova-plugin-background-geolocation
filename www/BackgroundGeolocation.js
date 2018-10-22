@@ -34,7 +34,8 @@ var BackgroundGeolocation = {
     'authorization',
     'foreground',
     'background',
-    'abort_requested'
+    'abort_requested',
+    'http_authorization'
   ],
 
   DISTANCE_FILTER_PROVIDER: 0,
