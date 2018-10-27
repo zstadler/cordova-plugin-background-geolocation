@@ -128,20 +128,6 @@ interface BackgroundGeolocationOptions {
     postTemplate?: object
 }
 
-declare enum PluginEvents {
-    Location = 'location',
-    Stationary = 'stationary',
-    Activity = 'activity',
-    Start = 'start',
-    Stop = 'stop',
-    Error = 'error',
-    Authorization = 'authorization',
-    Foreground = 'foreground',
-    Background = 'background',
-    AbortRequested = 'abort_requested',
-    HttpAuthorization = 'http_authorization'
-}
-
 interface BackgroundGeolocationError {
     code: number,
     message: string
@@ -242,6 +228,21 @@ interface ServiceStatus {
      *  BackgroundGeolocation.AUTHORIZED_FOREGROUND
      */
     authorization: number
+}
+
+type LogLevel = "TRACE" | "DEBUG" | "INFO" | "WARN" | "ERROR";
+
+interface LogEntry {
+    /** id of log entry as stored in db */
+    id: number,
+    /** timestamp in milliseconds since beginning of UNIX epoch */
+    timestamp: number,
+    /** log level */
+    level: LogLevel,
+    /** log message */
+    message: string,
+    /** recorded stacktrace (Android only, on iOS part of message) */
+    stackTrace: string
 }
 
 interface BackgroundGeolocation {
@@ -423,7 +424,7 @@ interface BackgroundGeolocation {
         /** Return entries after fromId.  */
         fromId: number,
         /** Available levels: ["TRACE", "DEBUG", "INFO", "WARN", "ERROR] */
-        minLevel: string,
+        minLevel: LogLevel,
         success: (options: Array<LogEntry>) => void,
     ): void;
 
