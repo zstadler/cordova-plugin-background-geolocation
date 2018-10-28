@@ -48,6 +48,9 @@ Since alpha.45:
 - Listen for 401 Unauthorized status codes received from http server (by [@FeNoMeNa](https://github.com/FeNoMeNa/))
 More info: https://github.com/mauron85/react-native-background-geolocation/pull/308/files
 
+Since alpha.46:
+- typescript definitions
+
 #### Changed
 - start and stop methods doesn't accept callback (use event listeners instead)
 - for background syncing syncUrl option is required
@@ -163,6 +166,9 @@ Since alpha.43:
 - Android make sure mService exists when we call start or stop
 (PR: [#17](https://github.com/mauron85/background-geolocation-android/pull/17)
 by [@ivosabev](https://github.com/ivosabev/))
+
+Since alpha.46:
+- Android fix service crash on boot for Android 8 when startOnBoot option is used
 
 ### [2.3.6] - 2018-09-11
 ### Fixed
