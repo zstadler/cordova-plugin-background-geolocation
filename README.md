@@ -42,12 +42,12 @@ See [MIGRATIONS.md](/MIGRATIONS.md)
 ## Installing the plugin
 
 ```
-cordova plugin add cordova-plugin-mauron85-background-geolocation
+cordova plugin add cordova-plugin-mauron85-background-geolocation@2
 ```
 
 Default iOS location permission prompt can be changed in your config.xml:
 ```
-<plugin name="cordova-plugin-mauron85-background-geolocation">
+<plugin name="cordova-plugin-mauron85-background-geolocation" spec="^2.3.6">
     <variable name="ALWAYS_USAGE_DESCRIPTION" value="This app requires background tracking enabled" />
 </plugin>
 ```
@@ -56,7 +56,7 @@ For compatibility with other plugins you may also set specific google play versi
 Following example will lock google play services to version 11.0.1 for compatibility with phonegap-plugin-push.
 Note: Always consult documentation of other plugins to figure out correct GOOGLE_PLAY_SERVICES_VERSION.
 ```
-<plugin name="cordova-plugin-mauron85-background-geolocation">
+<plugin name="cordova-plugin-mauron85-background-geolocation" spec="^2.3.6">
     <variable name="ALWAYS_USAGE_DESCRIPTION" value="This app requires background tracking enabled" />
     <variable name="GOOGLE_PLAY_SERVICES_VERSION" value="11.0.1" />
 </plugin>
@@ -70,7 +70,7 @@ This plugin should work with Adobe® PhoneGap™ Build without any modification.
 To register plugin add following line into your config.xml:
 
 ```
-<plugin name="cordova-plugin-mauron85-background-geolocation"/>
+<plugin name="cordova-plugin-mauron85-background-geolocation" spec="^2.3.6"/>
 ```
 
 NOTE: If you're using *hydration*, you have to download and reinstall your app with every new version of the plugin, as plugins are not updated.
