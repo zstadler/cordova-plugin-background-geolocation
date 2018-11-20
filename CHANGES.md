@@ -108,6 +108,9 @@ Since alpha.40:
 (PR: [#9](https://github.com/mauron85/background-geolocation-android/pull/9)
 by [@danielgindi](https://github.com/danielgindi/))
 
+Since alpha.48:
+- removeAllListeners - remove all event listeners when calling without parameter
+
 ### Fixed
 
 Since alpha.13:
@@ -172,6 +175,10 @@ by [@ivosabev](https://github.com/ivosabev/))
 
 Since alpha.46:
 - Android fix service crash on boot for Android 8 when startOnBoot option is used
+
+Since alpha.48:
+- fix typescript definitions (fixes #514)
+- Android prefix resource strings to prevent collision with other plugins
 
 ### [2.3.6] - 2018-09-11
 ### Fixed
