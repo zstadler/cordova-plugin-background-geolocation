@@ -140,7 +140,7 @@
             </service>
             <provider
                 android:name="com.marianhello.bgloc.data.provider.LocationContentProvider"
-                android:authorities="@string/content_authority"
+                android:authorities="@string/mauron85_bgloc_content_authority"
                 android:exported="false"
                 android:syncable="true"/>
             <service
@@ -179,15 +179,15 @@
         </config-file>
 
         <config-file target="res/values/strings.xml" parent="/resources">
-            <string name="account_name">$ACCOUNT_NAME</string>
-            <string name="account_type">$ACCOUNT_TYPE</string>
-            <string name="content_authority">$CONTENT_AUTHORITY</string>
+            <string name="mauron85_bgloc_account_name">$ACCOUNT_NAME</string>
+            <string name="mauron85_bgloc_account_type">$ACCOUNT_TYPE</string>
+            <string name="mauron85_bgloc_content_authority">$CONTENT_AUTHORITY</string>
         </config-file>
 
         <edit-config file="res/xml/authenticator.xml" target="/*" mode="overwrite">
           <account-authenticator
               xmlns:android="http://schemas.android.com/apk/res/android"
-              android:accountType="@string/account_type"
+              android:accountType="@string/mauron85_bgloc_account_type"
               android:icon="$ICON"
               android:smallIcon="$SMALL_ICON"
               android:label="$ACCOUNT_LABEL"/>
@@ -196,8 +196,8 @@
         <edit-config file="res/xml/syncadapter.xml" target="/*" mode="overwrite">
           <sync-adapter
               xmlns:android="http://schemas.android.com/apk/res/android"
-              android:contentAuthority="@string/content_authority"
-              android:accountType="@string/account_type"
+              android:contentAuthority="@string/mauron85_bgloc_content_authority"
+              android:accountType="@string/mauron85_bgloc_account_type"
               android:userVisible="false"
               android:supportsUploading="true"
               android:allowParallelSyncs="false"
