@@ -219,9 +219,7 @@ function onDeviceReady() {
   // BackgroundGeolocation.start();
 
   // Don't forget to remove listeners at some point!
-  // BackgroundGeolocation.events.forEach(function(event) {
-  //   return BackgroundGeolocation.removeAllListeners(event);
-  // });
+  // BackgroundGeolocation.removeAllListeners();
 }
 
 document.addEventListener('deviceready', onDeviceReady, false);
@@ -453,7 +451,7 @@ Format of log entry:
 
 ### removeAllListeners(event)
 
-Unregister all event listeners for given event
+Unregister all event listeners for given event. If parameter `event` is not provided then all event listeners will be removed.
 
 ## Events
 

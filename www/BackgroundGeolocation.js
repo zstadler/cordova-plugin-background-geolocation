@@ -12,8 +12,19 @@
 var exec = require('cordova/exec');
 var channel = require('cordova/channel');
 var radio = require('./radio');
+var TAG = 'CDVBackgroundGeolocation';
 
 var emptyFnc = function () { };
+
+var assert = function (condition, msgArray) {
+  if (!condition) {
+      throw new Error(msgArray.join('') || 'Assertion failed');
+  }
+}
+
+var assertFnc = function(fnc, msgArray) {
+  assert(typeof (fnc) === 'function', msgArray);
+}
 
 var eventHandler = function (event) {
   radio(event.name).broadcast(event.payload);
@@ -22,6 +33,14 @@ var eventHandler = function (event) {
 var errorHandler = function (error) {
   radio('error').broadcast(error);
 };
+
+var unsubscribeAll = function (channels) {
+  channels.forEach(function(channel) {
+    var topic = radio(channel);
+    var callbacks = [].concat.apply([], topic.channels[channel]); // flatten array
+    topic.unsubscribe.apply(topic, callbacks);
+  });
+}
 
 var BackgroundGeolocation = {
   events: [
@@ -89,9 +108,7 @@ var BackgroundGeolocation = {
   },
 
   getConfig: function (success, failure) {
-    if (typeof (success) !== 'function') {
-      throw 'BackgroundGeolocation#getConfig requires a success callback';
-    }
+    assertFnc(success, [TAG, '#getConfig requires a success callback']);
     exec(success,
       failure || emptyFnc,
       'BackgroundGeolocation',
@@ -102,19 +119,17 @@ var BackgroundGeolocation = {
    * Returns current stationaryLocation if available.  null if not
    */
   getStationaryLocation: function (success, failure) {
-    if (typeof (success) !== 'function') {
-      throw 'BackgroundGeolocation#getStationaryLocation requires a success callback';
-    }
+    assertFnc(success, [TAG, '#getStationaryLocation requires a success callback']);
     exec(success,
       failure || emptyFnc,
       'BackgroundGeolocation',
       'getStationaryLocation', []);
   },
 
+  // @deprecated
   isLocationEnabled: function (success, failure) {
-    if (typeof (success) !== 'function') {
-      throw 'BackgroundGeolocation#isLocationEnabled requires a success callback';
-    }
+    console.log('[WARN]: ' + TAG + '#isLocationEnabled is deprecated! Use checkStatus instead.');
+    assertFnc(success, [TAG, '#isLocationEnabled requires a success callback']);
     exec(success,
       failure || emptyFnc,
       'BackgroundGeolocation',
@@ -136,9 +151,7 @@ var BackgroundGeolocation = {
   },
 
   getLocations: function (success, failure) {
-    if (typeof (success) !== 'function') {
-      throw 'BackgroundGeolocation#getLocations requires a success callback';
-    }
+    assertFnc(success, [TAG, '#getLocations requires a success callback']);
     exec(success,
       failure || emptyFnc,
       'BackgroundGeolocation',
@@ -146,9 +159,7 @@ var BackgroundGeolocation = {
   },
 
   getValidLocations: function (success, failure) {
-    if (typeof (success) !== 'function') {
-      throw 'BackgroundGeolocation#getValidLocations requires a success callback';
-    }
+    assertFnc(success, [TAG, '#getValidLocations requires a success callback']);
     exec(success,
       failure || emptyFnc,
       'BackgroundGeolocation',
@@ -163,7 +174,6 @@ var BackgroundGeolocation = {
   },
 
   deleteAllLocations: function (success, failure) {
-    console.log('[Warning]: deleteAllLocations is deprecated and will be removed in future versions.')
     exec(success || emptyFnc,
       failure || emptyFnc,
       'BackgroundGeolocation',
@@ -184,7 +194,7 @@ var BackgroundGeolocation = {
 
     if (acnt > 1 && typeof arguments[1] == 'function') {
       // backward compatibility
-      console.log('[WARN]: Calling deprecated variant of getLogEntries method.');
+      console.log('[WARN]: Calling deprecated variant of ' + TAG + '#getLogEntries method.');
       offset = 0;
       minLevel = BackgroundGeolocation.LOG_DEBUG;
       success = arguments[1] || emptyFnc;
@@ -238,12 +248,8 @@ var BackgroundGeolocation = {
   },
 
   on: function (event, callbackFn) {
-    if (typeof callbackFn !== 'function') {
-      throw 'BackgroundGeolocation: callback function must be provided';
-    }
-    if (this.events.indexOf(event) < 0) {
-      throw 'BackgroundGeolocation: Unknown event "' + event + '"';
-    }
+    assertFnc(callbackFn, [TAG, '#on requires a callback function']);
+    assert(this.events.indexOf(event) > -1, [TAG, '#on unknown event "' + event + '"']);
     radio(event).subscribe(callbackFn);
     return {
       remove: function () {
@@ -253,14 +259,15 @@ var BackgroundGeolocation = {
   },
 
   removeAllListeners: function (event) {
-    if (this.events.indexOf(event) < 0) {
-      console.log('[WARN] RNBackgroundGeolocation: removeAllListeners for unknown event "' + event + '"');
-      return false;
+    if (!event) {
+      unsubscribeAll(this.events);
+      return void 0;
     }
-
-    var topic = radio(event);
-    var callbacks = [].concat.apply([], topic.channels[event]); // flatten array
-    return topic.unsubscribe.apply(topic, callbacks);
+    if (this.events.indexOf(event) < 0) {
+      console.log('[WARN] ' + TAG + '#removeAllListeners for unknown event "' + event + '"');
+      return void 0;
+    }
+    unsubscribeAll([event]);
   }
 };
 
