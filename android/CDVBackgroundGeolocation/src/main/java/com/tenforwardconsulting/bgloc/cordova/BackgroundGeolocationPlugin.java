@@ -17,7 +17,6 @@ import android.content.Context;
 
 import com.marianhello.bgloc.BackgroundGeolocationFacade;
 import com.marianhello.bgloc.Config;
-import com.marianhello.bgloc.LocationService;
 import com.marianhello.bgloc.PluginDelegate;
 import com.marianhello.bgloc.PluginException;
 import com.marianhello.bgloc.cordova.ConfigMapper;
@@ -297,9 +296,6 @@ public class BackgroundGeolocationPlugin extends CordovaPlugin implements Plugin
                         callbackContext.success(ConfigMapper.toJSONObject(config));
                     } catch (JSONException e) {
                         callbackContext.sendPluginResult(ErrorPluginResult.from("Error getting config", e, PluginException.JSON_ERROR));
-                    } catch (PluginException e) {
-                        logger.error("Error getting config: {}", e.getMessage());
-                        callbackContext.sendPluginResult(ErrorPluginResult.from(e));
                     }
                 }
             });
@@ -545,7 +541,7 @@ public class BackgroundGeolocationPlugin extends CordovaPlugin implements Plugin
     }
 
     @Override
-    public void onActitivyChanged(BackgroundActivity activity) {
+    public void onActivityChanged(BackgroundActivity activity) {
         try {
             sendEvent(ACTIVITY_EVENT, activity.toJSONObject());
         } catch (JSONException e) {
@@ -557,10 +553,10 @@ public class BackgroundGeolocationPlugin extends CordovaPlugin implements Plugin
     @Override
     public void onServiceStatusChanged(int status) {
         switch (status) {
-            case LocationService.SERVICE_STARTED:
+            case BackgroundGeolocationFacade.SERVICE_STARTED:
                 sendEvent(START_EVENT);
                 return;
-            case LocationService.SERVICE_STOPPED:
+            case BackgroundGeolocationFacade.SERVICE_STOPPED:
                 sendEvent(STOP_EVENT);
                 return;
         }
