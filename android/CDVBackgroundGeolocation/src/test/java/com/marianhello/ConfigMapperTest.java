@@ -12,6 +12,8 @@ import junit.framework.Assert;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,6 +22,7 @@ import java.util.HashMap;
  * Created by finch on 15.12.2017.
  */
 
+@RunWith(RobolectricTestRunner.class)
 public class ConfigMapperTest {
     @Test
     public void testDefaultToJSONObject() throws JSONException {

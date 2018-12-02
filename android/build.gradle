@@ -2,6 +2,10 @@
 
 buildscript {
     repositories {
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
         jcenter()
     }
     dependencies {
@@ -14,8 +18,16 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
         jcenter()
     }
+}
+
+ext {
+    // gradle3EXPERIMENTAL = "yes"
 }
 
 task clean(type: Delete) {
