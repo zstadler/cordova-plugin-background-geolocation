@@ -180,6 +180,10 @@ Since alpha.48:
 - fix typescript definitions (fixes #514)
 - Android prefix resource strings to prevent collision with other plugins
 
+Since alpha.49:
+- Android fix App Crashes when entering / leaving Background
+- Android fix crash on permission when started from background
+
 ### [2.3.6] - 2018-09-11
 ### Fixed
 - Android remove non public URL
