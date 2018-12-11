@@ -111,6 +111,9 @@ by [@danielgindi](https://github.com/danielgindi/))
 Since alpha.48:
 - removeAllListeners - remove all event listeners when calling without parameter
 
+Since alpha.50:
+- export BackgroundGeolocationPlugin interface for ionic users (fixes #515)
+
 ### Fixed
 
 Since alpha.13:
