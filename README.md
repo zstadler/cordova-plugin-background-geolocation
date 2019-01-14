@@ -12,6 +12,18 @@ Please support my work and continued development with your donation.
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KTUXQQD85F666)
 
+## Submitting issues
+
+All new issues should follow instructions in [ISSUE_TEMPLATE.md](/ISSUE_TEMPLATE.md).
+A properly filled issue report will significantly reduce number of follow up questions and decrease issue resolving time.
+Most issues cannot be resolved without debug logs. Please try to isolate debug lines related to your issue.
+Instructions for how to prepare debug logs can be found in section [Debugging](#debugging).
+If you're reporting an app crash, debug logs might not contain all the necessary information about the cause of the crash.
+In that case, also provide relevant parts of output of `adb logcat` command.
+
+# Android background service issues
+There are repeatedly reported issues with some android devices not working in the background. Check if your device model is on  [dontkillmyapp list](https://dontkillmyapp.com) before you report new issue. For more information check out [dontkillmyapp.com](https://dontkillmyapp.com/problem).
+
 ## Description
 
 Cross-platform geolocation for Cordova / PhoneGap with battery-saving "circular region monitoring" and "stop detection".
@@ -28,15 +40,6 @@ See [Which provider should I use?](/PROVIDERS.md) for more information about pro
 ## Example Application
 
 Checkout repository [cordova-plugin-background-geolocation-example](https://github.com/mauron85/cordova-plugin-background-geolocation-example).
-
-## Submitting issues
-
-All new issues should follow instructions in [ISSUE_TEMPLATE.md](/ISSUE_TEMPLATE.md).
-A properly filled issue report will significantly reduce number of follow up questions and decrease issue resolving time.
-Most issues cannot be resolved without debug logs. Please try to isolate debug lines related to your issue.
-Instructions for how to prepare debug logs can be found in section [Debugging](#debugging).
-If you're reporting an app crash, debug logs might not contain all the necessary information about the cause of the crash.
-In that case, also provide relevant parts of output of `adb logcat` command.
 
 ## Migrations
 
