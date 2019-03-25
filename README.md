@@ -48,7 +48,7 @@ See [MIGRATIONS.md](/MIGRATIONS.md)
 ## Installing the plugin
 
 ```
-cordova plugin add cordova-plugin-mauron85-background-geolocation@alpha
+cordova plugin add cordova-plugin-mauron85-background-geolocation
 ```
 
 You may also want to change default iOS permission prompts and set specific google play version and android support library version for compatibility with other plugins.
@@ -56,7 +56,7 @@ You may also want to change default iOS permission prompts and set specific goog
 **Note:** Always consult documentation of other plugins to figure out compatible versions.
 
 ```
-cordova plugin add cordova-plugin-mauron85-background-geolocation@alpha \
+cordova plugin add cordova-plugin-mauron85-background-geolocation \
   --variable GOOGLE_PLAY_SERVICES_VERSION=11+ \
   --variable ANDROID_SUPPORT_LIBRARY_VERSION=23+ \
   --variable ALWAYS_USAGE_DESCRIPTION="App requires ..." \

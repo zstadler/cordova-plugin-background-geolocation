@@ -1,6 +1,11 @@
 ## Changelog
 
-### [3.0.0] - unreleased
+### [3.0.0] - 2019-03-25
+### Fixed
+- Android fix don't start service on configure
+fixes: #552, #551
+
+### [3.0.0-alpha.XY] - unreleased
 #### Added
 - checkStatus if service is running
 - events [start, stop, authorization, background, foreground]
