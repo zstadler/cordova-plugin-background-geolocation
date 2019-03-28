@@ -1,5 +1,13 @@
 ## Changelog
 
+### [3.0.1] - 2019-03-28
+### Added
+- iOS implement config.stopOnTerminate using startMonitoringSignificantLocationChanges
+
+### Fixed
+- Android fix don't start service on app visibility change events
+fixes: #552, #551
+
 ### [3.0.0] - 2019-03-25
 ### Fixed
 - Android fix don't start service on configure
