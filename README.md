@@ -1,4 +1,9 @@
-# cordova-plugin-mauron85-background-geolocation
+# @mauron85/cordova-plugin-background-geolocation
+
+## We're moving
+
+Npm package is now [@mauron85/cordova-plugin-background-geolocation](https://www.npmjs.com/package/@mauron85/cordova-plugin-background-geolocation)!
+
 
 ## Donation
 
@@ -42,7 +47,7 @@ See [MIGRATIONS.md](/MIGRATIONS.md)
 ## Installing the plugin
 
 ```
-cordova plugin add cordova-plugin-mauron85-background-geolocation
+cordova plugin add @mauron85/cordova-plugin-background-geolocation
 ```
 
 You may also want to change default iOS permission prompts and set specific google play version and android support library version for compatibility with other plugins.
@@ -50,7 +55,7 @@ You may also want to change default iOS permission prompts and set specific goog
 **Note:** Always consult documentation of other plugins to figure out compatible versions.
 
 ```
-cordova plugin add cordova-plugin-mauron85-background-geolocation \
+cordova plugin add @mauron85/cordova-plugin-background-geolocation \
   --variable GOOGLE_PLAY_SERVICES_VERSION=11+ \
   --variable ANDROID_SUPPORT_LIBRARY_VERSION=23+ \
   --variable ALWAYS_USAGE_DESCRIPTION="App requires ..." \
@@ -60,7 +65,7 @@ cordova plugin add cordova-plugin-mauron85-background-geolocation \
 Or in `config.xml`:
 
 ```
-<plugin name="cordova-plugin-mauron85-background-geolocation">
+<plugin name="@mauron85/cordova-plugin-background-geolocation">
   <variable name="GOOGLE_PLAY_SERVICES_VERSION" value="11+" />
   <variable name="ANDROID_SUPPORT_LIBRARY_VERSION" value="23+" />
   <variable name="ALWAYS_USAGE_DESCRIPTION" value="App requires background tracking enabled" />
@@ -77,7 +82,7 @@ This plugin should work with Adobe® PhoneGap™ Build without any modification.
 To register plugin add following line into your `config.xml`:
 
 ```
-<plugin name="cordova-plugin-mauron85-background-geolocation"/>
+<plugin name="@mauron85/cordova-plugin-background-geolocation"/>
 ```
 
 **Note:** If you're using *hydration*, you have to download and reinstall your app with every new version of the plugin, as plugins are not updated.
