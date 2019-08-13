@@ -3,7 +3,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-mauron85-background-geolocation"
-        version="3.0.4">
+        version="3.0.5">
     <name>CDVBackgroundGeolocation</name>
     <description>Cordova Background Geolocation Plugin</description>
     <license>Apache-2.0</license>
@@ -37,7 +37,7 @@
         <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_LIBRARY_VERSION" />
         <framework src="com.android.support:appcompat-v7:$ANDROID_SUPPORT_LIBRARY_VERSION" />
         <framework src="android/dependencies.gradle" custom="true" type="gradleReference"/>
-        <!-- Generated with gen_sources.sh @ 2018-12-02 16:04:42 -->
+        <!-- Generated with gen_sources.sh @ 2019-08-13 10:56:57 -->
         <source-file src="android/CDVBackgroundGeolocation/src/main/java/com/marianhello/bgloc/cordova/ConfigMapper.java" target-dir="src/com/marianhello/bgloc/cordova" />
         <source-file src="android/CDVBackgroundGeolocation/src/main/java/com/tenforwardconsulting/bgloc/cordova/BackgroundGeolocationPlugin.java" target-dir="src/com/tenforwardconsulting/bgloc/cordova" />
         <source-file src="android/common/src/main/java/com/evgenii/jsevaluator/HandlerWrapper.java" target-dir="src/com/evgenii/jsevaluator" />
@@ -106,7 +106,7 @@
         <source-file src="android/common/src/main/java/com/marianhello/utils/CloneHelper.java" target-dir="src/com/marianhello/utils" />
         <source-file src="android/common/src/main/java/com/marianhello/utils/Convert.java" target-dir="src/com/marianhello/utils" />
         <source-file src="android/common/src/main/java/com/marianhello/utils/TextUtils.java" target-dir="src/com/marianhello/utils" />
-        <source-file src="android/common/src/main/java/com/marianhello/utils/Tone.java" target-dir="src/com/marianhello/utils" />
+        <source-file src="android/common/src/main/java/com/marianhello/utils/ToneGenerator.java" target-dir="src/com/marianhello/utils" />
         <source-file src="android/common/src/main/java/com/tenforwardconsulting/bgloc/DistanceFilterLocationProvider.java" target-dir="src/com/tenforwardconsulting/bgloc" />
         <source-file src="android/common/src/main/java/org/apache/commons/io/Charsets.java" target-dir="src/org/apache/commons/io" />
         <source-file src="android/common/src/main/java/org/apache/commons/io/input/ReversedLinesFileReader.java" target-dir="src/org/apache/commons/io/input" />
