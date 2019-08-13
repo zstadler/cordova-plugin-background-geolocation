@@ -1,5 +1,12 @@
 ## Changelog
 
+### [3.0.4] - 2019-08-13
+- Android fixed pausing that wouldn't take config into account (PR #38 common repo) - @rewieer
+- Fixed XML config to use to install plugin (PR #575) - @globules-io
+- Fixed typo in README - @diegogurpegui
+
+Many thanks to all contributors
+
 ### [3.0.1] - 2019-03-28
 ### Added
 - iOS implement config.stopOnTerminate using startMonitoringSignificantLocationChanges
