@@ -1,5 +1,9 @@
 ## Changelog
 
+### [3.0.7] - 2019-09-17
+### Fixed
+- Android Foreground service permission is required since Android 28 - @IsraelHikingMap
+
 ### [3.0.6] - 2019-08-27
 ### Fixed
 - Android allow to start service from background on API >=26
