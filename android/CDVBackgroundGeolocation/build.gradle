@@ -1,11 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: '../common/VERSIONS.gradle'
 
-def projectFlavor = "preoreo"
-if (rootProject.hasProperty('oreoEXPERIMENTAL')) {
-    projectFlavor = "oreo"
-}
-
 android {
     compileSdkVersion project.ext.getCompileSdkVersion()
     buildToolsVersion project.ext.getBuildToolsVersion()
@@ -35,6 +30,5 @@ dependencies {
     compile libs.slf4j
     compile project(':CordovaLib')
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    releaseCompile project(path: ':common', configuration: "${projectFlavor}Release")
-    debugCompile project(path: ':common', configuration: "${projectFlavor}Debug")
+    compile project(path: ':common')
 }

@@ -27,7 +27,6 @@ allprojects {
 }
 
 ext {
-    // gradle3EXPERIMENTAL = "yes"
 }
 
 task clean(type: Delete) {
