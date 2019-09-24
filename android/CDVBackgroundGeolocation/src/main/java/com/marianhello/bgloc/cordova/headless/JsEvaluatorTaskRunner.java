@@ -12,9 +12,7 @@ public class JsEvaluatorTaskRunner extends AbstractTaskRunner {
     private JsEvaluator mJsEvaluator;
     public static String BUNDLE_KEY = "JS";
 
-    public JsEvaluatorTaskRunner(Context context) {
-        mJsEvaluator = new JsEvaluator(context);
-    }
+    public JsEvaluatorTaskRunner() {}
 
     @Override
     public void runTask(final Task task) {
@@ -45,5 +43,11 @@ public class JsEvaluatorTaskRunner extends AbstractTaskRunner {
                 .append("}").toString();
 
         mJsEvaluator.callFunction(jsTask, callback, "task", task.getName(), task.toString());
+    }
+
+    @Override
+    public void setContext(Context context) {
+        super.setContext(context);
+        mJsEvaluator = new JsEvaluator(context);
     }
 }
