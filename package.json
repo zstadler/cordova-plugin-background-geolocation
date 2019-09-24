@@ -5,7 +5,7 @@
   "main": "./www/BackgroundGeolocation.js",
   "types": "./www/BackgroundGeolocation.d.ts",
   "cordova": {
-    "id": "cordova-plugin-mauron85-background-geolocation",
+    "id": "@mauron85/cordova-plugin-background-geolocation",
     "platforms": [
       "android",
       "ios"
