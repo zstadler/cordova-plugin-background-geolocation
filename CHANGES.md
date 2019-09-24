@@ -1,5 +1,14 @@
 ## Changelog
 
+### [3.1.0] - 2019-09-24
+### Fixed
+- fix package scope
+- Android fix RejectedExecutionException
+- Android add stop guard
+
+### Changed
+- adopt headless task changes in common module
+
 ### [3.0.7] - 2019-09-17
 ### Fixed
 - Android Foreground service permission is required since Android 28 - @IsraelHikingMap
