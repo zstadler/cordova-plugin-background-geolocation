@@ -185,7 +185,7 @@ function onDeviceReady() {
       // we need to set delay or otherwise alert may not be shown
       setTimeout(function() {
         var showSettings = confirm('App requires location tracking permission. Would you like to open app settings?');
-        if (showSetting) {
+        if (showSettings) {
           return BackgroundGeolocation.showAppSettings();
         }
       }, 1000);
