@@ -37,10 +37,10 @@ import org.json.JSONObject;
 import java.util.Collection;
 
 // imports for Image Location
-import android.Manifest;
-import android.content.pm.PackageManager;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
+// import android.Manifest;
+// import android.content.pm.PackageManager;
+// import androidx.core.app.ActivityCompat;
+// import androidx.core.content.ContextCompat;
 
 public class BackgroundGeolocationPlugin extends CordovaPlugin implements PluginDelegate {
 
