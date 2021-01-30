@@ -37,7 +37,7 @@ import org.json.JSONObject;
 import java.util.Collection;
 
 // imports for Image Location
-// import android.Manifest;
+import android.Manifest;
 // import android.content.pm.PackageManager;
 // import androidx.core.app.ActivityCompat;
 // import androidx.core.content.ContextCompat;
