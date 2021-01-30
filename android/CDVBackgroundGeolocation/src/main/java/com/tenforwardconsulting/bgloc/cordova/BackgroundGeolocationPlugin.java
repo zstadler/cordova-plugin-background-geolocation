@@ -132,6 +132,7 @@ public class BackgroundGeolocationPlugin extends CordovaPlugin implements Plugin
         super.pluginInitialize();
 
         logger = LoggerManager.getLogger(BackgroundGeolocationPlugin.class);
+	logger.debug("[Background Geolocation Plugin] initialized");
         facade = new BackgroundGeolocationFacade(this.getContext(), this);
         facade.resume();
     }
