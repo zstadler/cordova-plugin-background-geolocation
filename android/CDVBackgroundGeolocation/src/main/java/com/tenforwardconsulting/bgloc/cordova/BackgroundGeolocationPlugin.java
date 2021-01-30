@@ -36,6 +36,12 @@ import org.json.JSONObject;
 
 import java.util.Collection;
 
+// imports for Image Location
+import android.Manifest;
+import android.content.pm.PackageManager;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 public class BackgroundGeolocationPlugin extends CordovaPlugin implements PluginDelegate {
 
     public static final String LOCATION_EVENT = "location";
@@ -126,15 +132,29 @@ public class BackgroundGeolocationPlugin extends CordovaPlugin implements Plugin
             return error;
         }
     }
+    private void getImageLocationPermission() {
+        int permissionCheck = ContextCompat.checkSelfPermission(this.cordova.getActivity(),
+                Manifest.permission.ACCESS_MEDIA_LOCATION);
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED)
+        {
+            //  Could do better here - if the app does not already have permission should
+            //  only continue when we get the success callback from this.
+            ActivityCompat.requestPermissions(this.cordova.getActivity(),
+                    new String[]{Manifest.permission.ACCESS_MEDIA_LOCATION}, 1);
+            // callbackContext.error("Please grant media location permission");
+        }
+    }
 
     @Override
     protected void pluginInitialize() {
         super.pluginInitialize();
 
+        logger.debug("[Background Geolocation Plugin] initialization started");
         logger = LoggerManager.getLogger(BackgroundGeolocationPlugin.class);
-	logger.debug("[Background Geolocation Plugin] initialized");
         facade = new BackgroundGeolocationFacade(this.getContext(), this);
         facade.resume();
+        this.getImageLocationPermission();
+        logger.debug("[Background Geolocation Plugin] initialization completed");
     }
 
     public boolean execute(String action, final JSONArray data, final CallbackContext callbackContext) {
