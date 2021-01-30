@@ -40,7 +40,7 @@ import java.util.Collection;
 import android.Manifest;
 // import android.content.pm.PackageManager;
 // import androidx.core.app.ActivityCompat;
-// import androidx.core.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 
 public class BackgroundGeolocationPlugin extends CordovaPlugin implements PluginDelegate {
 
