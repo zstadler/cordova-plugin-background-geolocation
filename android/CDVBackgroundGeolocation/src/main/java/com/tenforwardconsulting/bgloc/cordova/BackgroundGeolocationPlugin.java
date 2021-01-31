@@ -40,7 +40,8 @@ import java.util.Collection;
 import android.Manifest;
 // import android.content.pm.PackageManager;
 // import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
+//!!! import androidx.core.content.ContextCompat;
+import android.support.v4.content.ContextCompat;
 
 public class BackgroundGeolocationPlugin extends CordovaPlugin implements PluginDelegate {
 
@@ -133,6 +134,7 @@ public class BackgroundGeolocationPlugin extends CordovaPlugin implements Plugin
         }
     }
     private void getImageLocationPermission() {
+        Context context = getContext();
         int permissionCheck = ContextCompat.checkSelfPermission(this.cordova.getActivity(),
                 Manifest.permission.ACCESS_MEDIA_LOCATION);
         if (permissionCheck != PackageManager.PERMISSION_GRANTED)
